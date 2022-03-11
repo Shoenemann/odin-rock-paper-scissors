@@ -50,6 +50,18 @@ function messageLose (winSelection,loseSelection) {
     return `You Lose! ${winSelection} beats ${loseSelection}.` 
 }
 
+function game() {
+    let playerSelection
+    let computerSelection
+    let resultMessage
+    for (let i =0; i<5; i++) {
+        computerSelection = computerPlay()
+        playerSelection = prompt ("Rock, paper or scissor?") 
+        resultMessage = roundGame()
+        console.log(resultMessage)
+    }
+}
+
 
 
  
