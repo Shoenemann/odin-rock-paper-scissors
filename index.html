@@ -13,11 +13,23 @@
     <button class="scissors">Scissors</button>
 
     <div class="message"></div>
+    <div class="score">
+        <p class="playerdiv">
+            Your score is: <span class="player">0</span>
+        </p>
+        <p class="computerdiv">The computer's score is <span class="computer">0</span></p>
+    </div>
 </body>
 
 <script>
     const buttons = Array.from(document.querySelectorAll("button"))
     const divMessage = document.querySelector('div.message')
+    const divScore = document.querySelector('div.score')
+    let playerSpan = document.querySelector('.player')
+    let computerSpan = document.querySelector('.computer')
+    let playerScore = parseInt(playerSpan.textContent)
+    let computerScore = parseInt(computerSpan.textContent)
+
     buttons.forEach( (btn) => {
         btn.addEventListener('click',() => {
             let playerSelection = btn.innerText
