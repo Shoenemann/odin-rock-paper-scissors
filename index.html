@@ -53,8 +53,8 @@
                     break
             }
             divMessage.textContent = message
-            if (computerScore>=5 ) announceWin('computer')
-            else if (playerScore >= 5) announceWin('player') 
+            if (computerScore>=5 && playerScore <5) announceWin('computer')
+            else if (playerScore >= 5 && computerScore <5) announceWin('player') 
         })
     })
 </script>
