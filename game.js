@@ -57,7 +57,7 @@ function game() {
     for (let i =0; i<5; i++) {
         computerSelection = computerPlay()
         playerSelection = prompt ("Rock, paper or scissor?") 
-        resultMessage = roundGame()
+        resultMessage = roundGame(playerSelection,computerSelection)
         console.log(resultMessage)
     }
 }

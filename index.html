@@ -8,6 +8,22 @@
     <script src="game.js"></script>
 </head>
 <body>
-    
+    <button class="rock">Rock</button>
+    <button class="paper">Paper</button>
+    <button class="scissors">Scissors</button>
+
+
 </body>
+
+<script>
+    const buttons = Array.from(document.querySelectorAll("button"))
+    buttons.forEach( (btn) => {
+        btn.addEventListener('click',() => {
+            let playerSelection = btn.innerText
+            let computerSelection = computerPlay()
+            let message = roundGame(playerSelection,computerSelection)
+            console.log (message)
+        })
+    })
+</script>
 </html>
