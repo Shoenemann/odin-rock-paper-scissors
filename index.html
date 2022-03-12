@@ -19,6 +19,7 @@
         </p>
         <p class="computerdiv">The computer's score is <span class="computer">0</span></p>
     </div>
+    <div class="announcediv"></div>
 </body>
 
 <script>
@@ -52,6 +53,8 @@
                     break
             }
             divMessage.textContent = message
+            if (computerScore>=5 ) announceWin('computer')
+            else if (playerScore >= 5) announceWin('player') 
         })
     })
 </script>

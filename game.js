@@ -31,6 +31,20 @@ function roundGame(playerSelection,computerSelection) {
     }
 }
 
+function announceWin(who) {
+    const announceDiv = document.querySelector('.announcediv')
+    let msg = ''
+    switch (who) {
+        case 'player':
+            msg = 'Hurray! You won 5 rounds, therefore you are the Winner!'
+            break
+        case 'computer' :
+            msg = 'The computer won 5 rounds, therefore it is the Winner, try again!'
+            break
+    }
+    announceDiv.textContent = msg
+}
+
 function formatSelection(wOrD) {
     word=wOrD.toLowerCase();
     let firstLetter=word.substr(0,1)
