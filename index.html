@@ -32,9 +32,25 @@
 
     buttons.forEach( (btn) => {
         btn.addEventListener('click',() => {
-            let playerSelection = btn.innerText
+            let playerSelection = formatSelection(btn.innerText)
             let computerSelection = computerPlay()
-            let message = roundGame(playerSelection,computerSelection)
+            let whoWins = roundGame(playerSelection,computerSelection)
+            let message = ''
+            switch(whoWins) {
+                case 'draw':
+                    message = messageDraw(playerSelection)
+                    break;
+                case 'player':
+                    message = messageWin(playerSelection,computerSelection)
+                    playerScore++
+                    playerSpan.textContent=playerScore
+                    break
+                case 'computer':btn
+                    message = messageLose(computerSelection,playerSelection)
+                    computerScore++
+                    computerSpan.textContent = computerScore
+                    break
+            }
             divMessage.textContent = message
         })
     })

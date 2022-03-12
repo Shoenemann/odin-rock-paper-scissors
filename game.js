@@ -14,19 +14,20 @@ function itWins(i,j) {
     }
 }
 
+
 function roundGame(playerSelection,computerSelection) {
     let p = formatSelection(playerSelection)
     let c = formatSelection(computerSelection)
     if(p == c) {
-        return messageDraw(p)
+        return 'draw'
     }
     let i = mani.indexOf(p)
     let j = mani.indexOf(c)
     if ( itWins(i,j) ) {
-        return messageWin(p,c)
+        return 'player'
     }
     else {
-        return messageLose(c,p)
+        return 'computer'
     }
 }
 
